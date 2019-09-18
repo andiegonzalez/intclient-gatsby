@@ -2,13 +2,33 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Image from "./image.js"
-import { Box, Heading } from "@chakra-ui/core"
-
+import { Box } from "@chakra-ui/core"
+const style = {
+  padding: "1rem",
+}
 const Header = ({ siteTitle }) => (
-  <Box as="header" p="4">
-    <Heading>
-      <Link to="/">{/* <svg url="../images/logo.svg" />*/}</Link>
-    </Heading>
+  <Box as="header">
+    <Link style={style} to="/">
+      {/* <svg url="../images/logo.svg" />*/}
+    </Link>
+    <Link style={style} to="/welcome">
+      welcome
+    </Link>
+    <Link style={style} to="/login">
+      login
+    </Link>
+    <Link style={style} to="/newaccount">
+      new account
+    </Link>
+    <Link style={style} to="/forgot">
+      forgot
+    </Link>
+    <Link style={style} to="/setup">
+      setup
+    </Link>
+    <Link style={style} to="/styleguide">
+      styles
+    </Link>
   </Box>
 )
 

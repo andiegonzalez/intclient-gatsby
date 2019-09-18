@@ -9,7 +9,9 @@ const handleAddAccount = event => {
   event.preventDefault()
   console.log("addacc")
 }
-
+const inputStyle = {
+  border: "3px solid #2168DD",
+}
 const SetupPage = () => {
   return (
     <ThemeProvider theme={customTheme}>
@@ -19,7 +21,7 @@ const SetupPage = () => {
         {/*stepper*/}
         <p>description</p>
         <Stack spacing={2} maxW="half">
-          <Input type="text" />
+          <Input type="text" style={inputStyle} />
           <Button leftIcon="add" variant="link" onClick={handleAddAccount}>
             New Account
           </Button>
