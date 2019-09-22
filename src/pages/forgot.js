@@ -8,11 +8,9 @@ import { customTheme } from "../theme.js"
 import {
   FormControl,
   FormLabel,
-  FormErrorMessage,
   Heading,
   Button,
   Input,
-  Link,
   Grid,
 } from "@chakra-ui/core"
 

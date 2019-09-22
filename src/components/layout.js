@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import { Box } from "@chakra-ui/core"
 import Header from "./header"
 
 const Layout = ({ children }) => {
@@ -26,9 +26,9 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
-      <footer>
+      <Box as="footer" p={4} textAlign="center" fontWeight="semibold">
         Proyecto Integrador 2019 | ITESM by Andrea Gonzalez Arteaga
-      </footer>
+      </Box>
     </>
   )
 }

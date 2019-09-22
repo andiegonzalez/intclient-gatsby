@@ -3,57 +3,69 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Image from "../components/image"
 import { ThemeProvider, CSSReset } from "@chakra-ui/core"
 import { customTheme } from "../theme.js"
 import {
   FormControl,
   FormLabel,
-  FormErrorMessage,
   Heading,
   Button,
   Input,
-  Link,
   Grid,
+  Box,
 } from "@chakra-ui/core"
 
 const handleLoginForm = event => {
   event.preventDefault()
   console.log("loginattempt")
 }
-const inputStyle = {
-  border: "3px solid #2168DD",
-}
-const handleForgotClick = event => {
-  event.preventDefault()
-  console.log("forgot")
-}
 const LoginPage = () => (
   <ThemeProvider theme={customTheme}>
     <CSSReset />
     <Layout>
       <SEO title="Finance Tracker | Log In" />
-      <Heading>Log In</Heading>
-      <Grid templateColumns="1fr 1fr">
-        <div>
+      <Grid templateColumns="1fr 1fr" gridGap={10} alignItems="center" px={10}>
+        <Box>
+          <Heading>Log In</Heading>
           <form onSubmit={handleLoginForm}>
             <FormControl>
-              <FormLabel htmlFor="email">Email address</FormLabel>
-              <Input style={inputStyle} type="email" id="email" />
+              <FormLabel htmlFor="email" mt={2} mb={0} p={0}>
+                Email address
+              </FormLabel>
+              <Input type="email" id="email" />
             </FormControl>
             <FormControl>
-              <FormLabel htmlFor="password">Password</FormLabel>
-              <Input style={inputStyle} type="password" id="password" />
+              <FormLabel htmlFor="password" mt={2} mb={0} p={0}>
+                Password
+              </FormLabel>
+              <Input type="password" id="password" />
             </FormControl>
-            <Link onClick={handleForgotClick}>¿Olvidaste tu contraseña?</Link>
-            <Button type="submit" variantColor="blue">
+            <Button
+              as="a"
+              href="/forgot"
+              variant="link"
+              variantColor="blue"
+              fontWeight="regular"
+              mt={2}
+            >
+              ¿Olvidaste tu contraseña?
+            </Button>
+            <Button type="submit" variantColor="blue" w="100%" mt={4}>
               Log In
             </Button>
           </form>
-          <hr />
-          <Button variantColor="red">Iniciar Sesión con Google</Button>
-          <Button variantColor="blue">Iniciar Sesión con Facebook</Button>
-        </div>
-        <div>{/*illustration*/}</div>
+          <hr style={{ margin: "1.5rem 0" }} />
+          <Grid templateColumns="1fr 1fr">
+            <Button variantColor="red">Iniciar Sesión con Google</Button>
+            <Button variantColor="blue" ml={2}>
+              Iniciar Sesión con Facebook
+            </Button>
+          </Grid>
+        </Box>
+        <Box maxW="80%">
+          <Image img="illustration" />
+        </Box>
       </Grid>
     </Layout>
   </ThemeProvider>

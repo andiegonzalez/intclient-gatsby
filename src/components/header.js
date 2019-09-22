@@ -7,11 +7,11 @@ const style = {
   padding: "1rem",
 }
 const Header = ({ siteTitle }) => (
-  <Box as="header">
-    <Link style={style} to="/">
-      {/* <svg url="../images/logo.svg" />*/}
+  <Box as="header" px={10} py={4}>
+    <Link to="/">
+      <Image img="logo" />
     </Link>
-    <Link style={style} to="/welcome">
+    {/*<Link style={style} to="/welcome">
       welcome
     </Link>
     <Link style={style} to="/login">
@@ -28,7 +28,7 @@ const Header = ({ siteTitle }) => (
     </Link>
     <Link style={style} to="/styleguide">
       styles
-    </Link>
+    </Link>*/}
   </Box>
 )
 

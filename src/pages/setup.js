@@ -1,9 +1,9 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+// import SEO from "../components/seo"
 import { ThemeProvider, CSSReset } from "@chakra-ui/core"
 import { customTheme } from "../theme.js"
-import { Heading, Button, Link, Input, Stack } from "@chakra-ui/core"
+import { Heading, Button, Input, Stack } from "@chakra-ui/core"
 
 const handleAddAccount = event => {
   event.preventDefault()

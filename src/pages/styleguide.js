@@ -1,8 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+// import Image from "../components/image"
 import SEO from "../components/seo"
 import { ThemeProvider, CSSReset } from "@chakra-ui/core"
 import { customTheme } from "../theme.js"
@@ -10,7 +10,6 @@ import {
   Button,
   FormLabel,
   FormControl,
-  FormHelperText,
   Input,
   Heading,
   Box,
@@ -22,7 +21,6 @@ import {
   Stat,
   StatLabel,
   StatNumber,
-  StatHelpText,
   IconButton,
 } from "@chakra-ui/core"
 
@@ -33,9 +31,8 @@ const styleGuide = () => (
       <SEO title="Finance Tracker | Inicio" />
       <Box
         className="typograhpy"
-        style={{ fontFamily: "Poppins" }}
+        style={{ fontFamily: "Poppins", maxWidth: "500px" }}
         p={2}
-        style={{ maxWidth: "500px" }}
       >
         <Heading as="h1" size="2xl">
           Heading 1
@@ -56,9 +53,8 @@ const styleGuide = () => (
       <hr />
       <Box
         className="buttons"
-        style={{ fontFamily: "Poppins" }}
+        style={{ fontFamily: "Poppins", maxWidth: "500px" }}
         p={2}
-        style={{ maxWidth: "500px" }}
       >
         <p>Buttons</p>
         <Button variantColor="blue" m={2}>
@@ -80,9 +76,8 @@ const styleGuide = () => (
       <hr />
       <Box
         className="inputs"
-        style={{ fontFamily: "Poppins" }}
+        style={{ fontFamily: "Poppins", maxWidth: "500px" }}
         p={2}
-        style={{ maxWidth: "500px" }}
       >
         <FormControl>
           <FormLabel htmlFor="email">Email address</FormLabel>
@@ -108,7 +103,6 @@ const styleGuide = () => (
               style={{
                 backgroundColor: "#2168DD",
                 color: "white",
-
                 fontWeight: 700,
               }}
             />
@@ -126,11 +120,7 @@ const styleGuide = () => (
           </InputGroup>
         </FormControl>
       </Box>
-      <Box
-        style={{ fontFamily: "Poppins" }}
-        p={2}
-        style={{ maxWidth: "500px" }}
-      >
+      <Box style={{ fontFamily: "Poppins", maxWidth: "500px" }} p={2}>
         <Stat>
           <StatLabel>Total</StatLabel>
           <StatNumber>$700MXN</StatNumber>
