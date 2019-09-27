@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { Box } from "@chakra-ui/core"
+import { Box, Grid } from "@chakra-ui/core"
 import Header from "./header"
 
 const Layout = ({ children }) => {
@@ -23,13 +23,13 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <Grid templateRows="auto 1fr auto" style={{ height: "100vh" }}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
       <Box as="footer" p={4} textAlign="center" fontWeight="semibold">
         Proyecto Integrador 2019 | ITESM by Andrea Gonzalez Arteaga
       </Box>
-    </>
+    </Grid>
   )
 }
 

@@ -25,7 +25,13 @@ const LoginPage = () => (
     <CSSReset />
     <Layout>
       <SEO title="Finance Tracker | Log In" />
-      <Grid templateColumns="1fr 1fr" gridGap={10} alignItems="center" px={10}>
+      <Grid
+        templateColumns="1fr 1fr"
+        gridGap={10}
+        alignItems="center"
+        px={10}
+        h="100%"
+      >
         <Box>
           <Heading>Log In</Heading>
           <form onSubmit={handleLoginForm}>

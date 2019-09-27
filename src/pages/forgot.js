@@ -3,6 +3,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Image from "../components/image"
 import { ThemeProvider, CSSReset } from "@chakra-ui/core"
 import { customTheme } from "../theme.js"
 import {
@@ -12,6 +13,7 @@ import {
   Button,
   Input,
   Grid,
+  Box,
 } from "@chakra-ui/core"
 
 const handleRecoverForm = event => {
@@ -26,20 +28,31 @@ const ForgotPage = () => (
     <CSSReset />
     <Layout>
       <SEO title="Finance Tracker | Recover Password" />
-      <Heading>Forgot Password</Heading>
-      <Grid templateColumns="1fr 1fr">
-        <div>
+
+      <Grid
+        templateColumns="1fr 1fr"
+        gridGap={10}
+        alignItems="center"
+        px={10}
+        h="100%"
+      >
+        <Box>
+          <Heading>Forgot Password</Heading>
           <form onSubmit={handleRecoverForm}>
             <FormControl>
-              <FormLabel htmlFor="email">Email address</FormLabel>
-              <Input style={inputStyle} type="email" id="email" />
+              <FormLabel htmlFor="email" mt={2} mb={0} p={0}>
+                Email address
+              </FormLabel>
+              <Input type="email" id="email" />
             </FormControl>
-            <Button type="submit" variantColor="blue">
+            <Button type="submit" variantColor="blue" w="100%" mt={4}>
               Recover Password
             </Button>
           </form>
-        </div>
-        <div>{/*illustration*/}</div>
+        </Box>
+        <Box maxW="80%">
+          <Image img="illustration" />
+        </Box>
       </Grid>
     </Layout>
   </ThemeProvider>
