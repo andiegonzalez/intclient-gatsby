@@ -28,6 +28,7 @@ table tr:first-child th:first-child {
 }
 table tr:first-child th:last-child {
   border-top-right-radius: 10px;
+  text-align: right;
 }
 table tr:last-child td:first-child {
   border-bottom-left-radius: 10px;

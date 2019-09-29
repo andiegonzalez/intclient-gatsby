@@ -22,7 +22,9 @@ const Balance = () => {
   ]
   return (
     <Box px={8} py={4}>
-      <Heading>Balance</Heading>
+      <Heading color="blue.600" fontSize="2em">
+        Balance
+      </Heading>
       <Stat>
         <StatLabel>Total</StatLabel>
         <StatNumber>$700MXN</StatNumber>

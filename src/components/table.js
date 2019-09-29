@@ -7,15 +7,13 @@ const Table = ({ headings, rows, total }) => {
       return <th key={index}>{head}</th>
     })
   }
-  const renderRowData = () => {
-    return rows.map((row, index) => {
-      return (
-        <tr key={index}>
-          <td>{row.account}</td>
-          <td className="money">${row.balance} MXN</td>
-        </tr>
-      )
+  const renderRowData = row => {
+    let tdArray = []
+    Object.keys(row).forEach(key => {
+      //format obj logic
+      tdArray.push(<td>{row[key].toString()}</td>)
     })
+    return tdArray
   }
 
   const renderTotal = () => {
@@ -23,17 +21,40 @@ const Table = ({ headings, rows, total }) => {
       <tr
         style={{
           backgroundColor: "#E9F0FC",
-          height: "2em",
+          height: "2.5em",
         }}
       >
         <td>Total</td>
-        <td className="money">{total}</td>
+        <td className="money">${total} MXN</td>
       </tr>
     )
   }
 
+  const renderFooter = () => {
+    let count = headings.length
+    let tds = []
+
+    if (total) {
+      for (let i = 0; i < count - 2; i++) {
+        tds.push(<td></td>)
+      }
+      return (
+        <>
+          <td>Total</td>
+          {tds}
+          <td className="money">${total} MXN</td>
+        </>
+      )
+    } else {
+      for (let i = 0; i < count; i++) {
+        tds.push(<td></td>)
+      }
+      return <>{tds}</>
+    }
+  }
+
   return (
-    <table style={{ width: "100%", maxWidth: "23em" }}>
+    <table style={{ width: "100%" }}>
       <thead>
         <tr
           style={{
@@ -43,21 +64,19 @@ const Table = ({ headings, rows, total }) => {
           {renderHeadings()}
         </tr>
       </thead>
-      <tbody>{renderRowData()}</tbody>
+      <tbody>
+        {rows.map((row, index) => (
+          <tr key={index}>{renderRowData(row)}</tr>
+        ))}
+      </tbody>
       <tfoot>
-        {total ? (
-          renderTotal()
-        ) : (
-          <tr
-            style={{
-              backgroundColor: "#E9F0FC",
-              height: "1.6em",
-            }}
-          >
-            <td></td>
-            <td></td>
-          </tr>
-        )}
+        <tr
+          style={{
+            backgroundColor: "#E9F0FC",
+          }}
+        >
+          {renderFooter()}
+        </tr>
       </tfoot>
     </table>
   )

@@ -1,12 +1,59 @@
 import React from "react"
-import { Box, Heading } from "@chakra-ui/core"
+import Table from "./table"
+import { Box, Heading, Grid, Flex } from "@chakra-ui/core"
 
-const Balance = () => {
+const Expenses = () => {
+  const dummyRowData = [
+    {
+      account: "cuenta1",
+      balance: 300.45,
+    },
+    {
+      account: "cuenta2",
+      balance: 50.45,
+    },
+    {
+      account: "cuenta1",
+      balance: 706,
+    },
+    {
+      account: "cuenta2",
+      balance: 50.45,
+    },
+    {
+      account: "cuenta1",
+      balance: 706,
+    },
+    {
+      account: "cuenta2",
+      balance: 50.45,
+    },
+    {
+      account: "cuenta1",
+      balance: 706,
+    },
+  ]
+  const totalAmount = 30299
   return (
-    <Box px={8} py={4}>
-      <Heading>Expenses</Heading>
-    </Box>
+    <Flex pr={8} py={4} direction="column" justifyContent="space-between">
+      <Heading color="blue.600" fontSize="2em">
+        Expenses
+      </Heading>
+      <Flex
+        direction="row"
+        alignItems="flex-start"
+        justifyContent="space-between"
+      >
+        <Box mt={10} w="200px" h="200px" borderRadius="50%" bg="blue.500"></Box>
+        <Table
+          headings={["Categories", "Amount"]}
+          rows={dummyRowData}
+          total={totalAmount}
+          style={{ alignSelf: "flex-end" }}
+        />
+      </Flex>
+    </Flex>
   )
 }
 
-export default Balance
+export default Expenses
