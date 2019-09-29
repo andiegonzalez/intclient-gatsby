@@ -23,7 +23,7 @@ const handleLoginForm = event => {
 const LoginPage = () => (
   <ThemeProvider theme={customTheme}>
     <CSSReset />
-    <Layout>
+    <Layout type="1">
       <SEO title="Finance Tracker | Log In" />
       <Grid
         templateColumns="1fr 1fr"

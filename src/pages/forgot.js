@@ -26,7 +26,7 @@ const inputStyle = {
 const ForgotPage = () => (
   <ThemeProvider theme={customTheme}>
     <CSSReset />
-    <Layout>
+    <Layout type="1">
       <SEO title="Finance Tracker | Recover Password" />
 
       <Grid

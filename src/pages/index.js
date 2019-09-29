@@ -11,7 +11,7 @@ const WelcomePage = () => {
   return (
     <ThemeProvider theme={customTheme}>
       <CSSReset />
-      <Layout>
+      <Layout type="1">
         <SEO title="Finance Tracker | Inicio" />
         <Grid
           templateColumns="1fr 1fr"

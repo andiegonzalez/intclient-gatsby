@@ -10,7 +10,7 @@ const SetupPage = () => {
   return (
     <ThemeProvider theme={customTheme}>
       <CSSReset />
-      <Layout>
+      <Layout type="1">
         <Grid templateRows="1fr auto" alignItems="center" px={10} maxW="70%">
           <Heading>Configure your account</Heading>
           <Stepper />

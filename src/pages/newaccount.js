@@ -23,7 +23,7 @@ const handleCreateAccountForm = event => {
 const LoginPage = () => (
   <ThemeProvider theme={customTheme}>
     <CSSReset />
-    <Layout>
+    <Layout type="1">
       <SEO title="Finance Tracker | Create New Account" />
       <Grid templateColumns="1fr 1fr" gridGap={10} alignItems="center" px={10}>
         <Box>
