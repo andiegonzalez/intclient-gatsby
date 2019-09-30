@@ -39,11 +39,7 @@ const Expenses = () => {
       <Heading color="blue.600" fontSize="2em">
         Expenses
       </Heading>
-      <Flex
-        direction="row"
-        alignItems="flex-start"
-        justifyContent="space-between"
-      >
+      <Grid templateColumns="auto 1fr" gridGap="2em">
         <Box mt={10} w="200px" h="200px" borderRadius="50%" bg="blue.500"></Box>
         <Table
           headings={["Categories", "Amount"]}
@@ -51,7 +47,7 @@ const Expenses = () => {
           total={totalAmount}
           style={{ alignSelf: "flex-end" }}
         />
-      </Flex>
+      </Grid>
     </Flex>
   )
 }

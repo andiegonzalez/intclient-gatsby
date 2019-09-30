@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import { Box, Heading } from "@chakra-ui/core"
+
 import Table from "./table"
+import Movement from "./movement"
 
 const Movements = () => {
-  const dummyRowData = [
+  const data = [
     {
       account: "cuenta1",
       balance: 300.45,
@@ -35,13 +37,14 @@ const Movements = () => {
   ]
   return (
     <Box px={8} py={4} gridColumn="1/3">
-      <Heading color="blue.600" fontSize="2em">
+      <Heading color="blue.600" fontSize="2em" mb={2}>
         Movements
       </Heading>
-      <Table
-        headings={["Date", "Concept", "Account", "Category", "Amount"]}
-        rows={dummyRowData}
-      />
+      <Table headings={["Date", "Concept", "Account", "Category", "Amount"]}>
+        {data.map((item, index) => (
+          <Movement data={item} key={index} />
+        ))}
+      </Table>
     </Box>
   )
 }

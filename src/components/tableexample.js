@@ -1,19 +1,18 @@
 import React from "react"
 import "../styles.scss"
 
-const Table = ({ headings, rows, total, children }) => {
+const Table = ({ headings, rows, total }) => {
   const renderHeadings = () => {
     return headings.map((head, index) => {
       return <th key={index}>{head}</th>
     })
   }
-
   const renderRowData = row => {
     let tdArray = []
-    Object.keys(row).forEach((key, index) => {
+    Object.keys(row).forEach(key => {
       //format obj logic
       tdArray.push(
-        <td className={key === "balance" ? "money" : ""} key={index}>
+        <td className={key === "balance" ? "money" : ""}>
           {row[key].toString()}
         </td>
       )
@@ -56,9 +55,9 @@ const Table = ({ headings, rows, total, children }) => {
         </tr>
       </thead>
       <tbody>
-        {children
-          ? children
-          : rows.map((row, index) => <tr key={index}>{renderRowData(row)}</tr>)}
+        {rows.map((row, index) => (
+          <tr key={index}>{renderRowData(row)}</tr>
+        ))}
       </tbody>
       <tfoot>
         <tr
