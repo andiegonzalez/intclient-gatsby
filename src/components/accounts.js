@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import {
-  Box,
   Input,
   Button,
   FormControl,
@@ -8,10 +7,8 @@ import {
   InputGroup,
   InputLeftAddon,
   InputRightAddon,
-  Icon,
   Flex,
   Grid,
-  IconButton,
 } from "@chakra-ui/core"
 
 const Accounts = ({ nextStep, prevStep }) => {

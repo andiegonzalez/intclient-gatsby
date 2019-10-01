@@ -1,12 +1,10 @@
 import React from "react"
-import { Box, Grid } from "@chakra-ui/core"
+import { Grid } from "@chakra-ui/core"
 import Layout from "../components/layout"
-import Sidebar from "../components/sidebar"
 import Balance from "../components/balance"
 import Expenses from "../components/expenses"
 import Movements from "../components/movements"
 import SEO from "../components/seo"
-import Image from "../components/image"
 import { ThemeProvider, CSSReset } from "@chakra-ui/core"
 import { customTheme } from "../theme.js"
 

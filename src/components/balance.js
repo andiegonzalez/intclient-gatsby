@@ -3,9 +3,6 @@ import Table from "./table"
 import { Box, Heading, Stat, StatLabel, StatNumber } from "@chakra-ui/core"
 
 const Balance = () => {
-  {
-    /*get table data query*/
-  }
   const dummyRowData = [
     {
       account: "cuenta1",

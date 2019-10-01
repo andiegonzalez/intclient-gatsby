@@ -20,9 +20,6 @@ const handleRecoverForm = event => {
   event.preventDefault()
   console.log("recoverattempt")
 }
-const inputStyle = {
-  border: "3px solid #2168DD",
-}
 const ForgotPage = () => (
   <ThemeProvider theme={customTheme}>
     <CSSReset />

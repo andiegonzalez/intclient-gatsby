@@ -1,10 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import Stepper from "../components/stepper"
 // import SEO from "../components/seo"
 import { ThemeProvider, CSSReset } from "@chakra-ui/core"
 import { customTheme } from "../theme.js"
-import { Heading, Button, Input, Stack, Grid } from "@chakra-ui/core"
+import { Heading, Grid } from "@chakra-ui/core"
 
 const SetupPage = () => {
   return (

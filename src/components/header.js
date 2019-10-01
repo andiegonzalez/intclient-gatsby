@@ -3,9 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import Image from "./image.js"
 import { Box } from "@chakra-ui/core"
-const style = {
-  padding: "1rem",
-}
+
 const Header = ({ siteTitle }) => (
   <Box as="header" px={10} py={4}>
     <Link to="/">

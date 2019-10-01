@@ -1,20 +1,39 @@
 import React from "react"
 import "../styles.scss"
 
-const Table = ({ headings, rows, total, children }) => {
+const Table = ({ headings, rows, total, children, movement }) => {
+  const formatCurrency = amount => {
+    let formatted = amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
+    return `$ ${formatted} MXN`
+  }
   const renderHeadings = () => {
-    return headings.map((head, index) => {
-      return <th key={index}>{head}</th>
+    let arr = headings.map((head, index) => {
+      return (
+        <th key={index} className={head === "Amount" ? "money" : ""}>
+          {head}
+        </th>
+      )
     })
+
+    if (movement) {
+      arr.push(<th></th>)
+    }
+    return arr
   }
 
   const renderRowData = row => {
     let tdArray = []
+    let value = ""
     Object.keys(row).forEach((key, index) => {
       //format obj logic
+      if (key === "balance" || key === "amount") {
+        value = formatCurrency(row[key])
+      } else {
+        value = row[key]
+      }
       tdArray.push(
         <td className={key === "balance" ? "money" : ""} key={index}>
-          {row[key].toString()}
+          {value.toString()}
         </td>
       )
     })
@@ -24,8 +43,7 @@ const Table = ({ headings, rows, total, children }) => {
   const renderFooter = () => {
     let count = headings.length
     let tds = []
-
-    if (total) {
+    if (total && movement) {
       for (let i = 0; i < count - 2; i++) {
         tds.push(<td></td>)
       }
@@ -33,7 +51,8 @@ const Table = ({ headings, rows, total, children }) => {
         <>
           <td>Total</td>
           {tds}
-          <td className="money">${total} MXN</td>
+          <td className="money">{formatCurrency(total)}</td>
+          <td></td>
         </>
       )
     } else {

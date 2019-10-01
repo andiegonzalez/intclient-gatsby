@@ -10,7 +10,6 @@ import {
   InputGroup,
   InputLeftAddon,
   InputRightAddon,
-  InputRightElement,
   Textarea,
 } from "@chakra-ui/core"
 
