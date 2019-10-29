@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from "../components/image"
+
 import { ThemeProvider, CSSReset } from "@chakra-ui/core"
 import { customTheme } from "../theme.js"
 import { Button, Grid, Heading, Flex, Box } from "@chakra-ui/core"
@@ -11,6 +12,7 @@ const WelcomePage = () => {
   return (
     <ThemeProvider theme={customTheme}>
       <CSSReset />
+
       <Layout type="1">
         <SEO title="Finance Tracker | Inicio" />
         <Grid

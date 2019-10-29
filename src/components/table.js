@@ -3,7 +3,10 @@ import "../styles.scss"
 
 const Table = ({ headings, rows, total, children, movement }) => {
   const formatCurrency = amount => {
-    let formatted = amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
+    console.log(amount)
+    let formatted = parseFloat(amount)
+      .toFixed(2)
+      .replace(/\d(?=(\d{3})+\.)/g, "$&,")
     return `$ ${formatted} MXN`
   }
   const renderHeadings = () => {
